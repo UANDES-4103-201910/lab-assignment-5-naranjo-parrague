@@ -15,6 +15,7 @@ class EventsController < ApplicationController
     render json: @event
   end
 
+
   def upcoming_events
   end
 end

@@ -15,4 +15,26 @@ class TicketsController < ApplicationController
     render json: @ticket
   end
 
+  def showtickettypes
+    @tickettype = TicketType.find(params[:ticketypeid])
+    @tickets = Ticket.where(ticket_type: @ticket_type)
+    render json: @tickets
+  end
+
+  def createtickettypes
+    @tickettype = TicketType.new(event: params[:event],price: params[:price], ticket_zone: params[:ticket_zone])
+    render json: @tickettype
+  end
+
+  def updatetickettypes
+    @tickettype = Ticket.find(params[:id])
+    @tickettype.update(event: params[:event],price: params[:price], ticket_zone: params[:ticket_zone])
+    render json: @ticket
+  end
+
+  def deletetickettypes
+    @tickettype = tickettype.find(params[:id]).delete
+    render json: {}
+  end
+
 end

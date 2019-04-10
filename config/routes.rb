@@ -17,5 +17,13 @@ Rails.application.routes.draw do
   patch '/event_venues/:id', to: 'event_venues#update'
   delete '/event_venues/:id', to: 'event_venues#destroy'
 
+  get '/ticket_types/:ticketypeid/tickets', to: 'tickets#showtickettypes'
+  post '/ticket_types/:ticketypeid/tickets', to: 'tickets#createtickettypes'
+  patch '/ticket_types/:ticketypeid/tickets', to: 'tickets#updatetickettypes'
+  delete '/ticket_types/:ticketypeid/tickets', to: 'tickets#deletetickettypes'
+  
+
+  
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
