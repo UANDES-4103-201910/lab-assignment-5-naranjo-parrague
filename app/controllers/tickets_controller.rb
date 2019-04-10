@@ -6,7 +6,7 @@ class TicketsController < ApplicationController
 
   def destroy
     @ticket = Ticket.find(params[:id]).delete
-    render json: @ticket
+    render json: {}
   end
 
   def update
